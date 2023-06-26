@@ -1,0 +1,30 @@
+-- Create a clothing store database
+
+CREATE TABLE clothingstore (id INTEGER PRIMARY KEY, sku TEXT, clothingname TEXT, retailprice INTEGER, stockavailable INTEGER);
+
+INSERT INTO clothingstore VALUES (1, "GMD101", "Gingham Maxi Dress", 89, 5);
+INSERT INTO clothingstore VALUES (2, "LMD101", "Linen Maxi Dress", 99, 10);
+INSERT INTO clothingstore VALUES (3, "VVD101", "Viscose V-Neck Dress", 99, 8);
+INSERT INTO clothingstore VALUES (4, "TSD101", "The Shirt Dress", 79, 12);
+INSERT INTO clothingstore VALUES (5, "GLSD101", "Gingham Long Sleeve Blouse", 69, 12);
+INSERT INTO clothingstore VALUES (6, "BSB101", "Blouson Sleeve Blouse", 69, 11);
+INSERT INTO clothingstore VALUES (7, "LWS101", "Linen Work Shirt", 79, 14);
+INSERT INTO clothingstore VALUES (8, "LSS101", "Linen Stripe Shirt", 79, 13);
+INSERT INTO clothingstore VALUES (9, "LSP101", "Linen Summer Pants", 89, 16);
+INSERT INTO clothingstore VALUES (10, "LWP101", "Linen Work Pants", 89, 17);
+INSERT INTO clothingstore VALUES (11, "WLJ101", "Wide Leg Jumpsuit", 99, 20);
+INSERT INTO clothingstore VALUES (12, "WJ101", "Work Jumpsuit", 99, 17);
+INSERT INTO clothingstore VALUES (13, "LB101", "Linen Blazer", 79, 15); 
+INSERT INTO clothingstore VALUES (14, "BS101", "Bike Shorts", 59, 13);
+INSERT INTO clothingstore VALUES (15, "LS101", "Linen Shorts", 59, 18);
+
+--Display the database order by price from $59 upwards.
+
+SELECT * FROM clothingstore WHERE retailprice >=59 ORDER BY retailprice asc;
+
+--Display the stock available for each SKU.
+
+SELECT * FROM clothingstore;
+SELECT SUM (stockavailable) FROM clothingstore GROUP BY sku;
+
+
